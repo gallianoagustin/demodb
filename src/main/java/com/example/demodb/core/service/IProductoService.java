@@ -8,13 +8,15 @@ import java.util.List;
 
 public interface IProductoService {
 
+    int countBuscadoraByFilter(String filtrovalor, String filtroField);
+
+    int countBuscadora();
     int countBuscadora(String filtroValor,String filtroField);
 
     List<IProductoBuscadora> findBuscadora(Pageable pageable);
-    List<IProductoBuscadora> findBuscadoraBySku(Pageable pageable,String filtroValor,String filtroField);
 
     List<Producto>findAll();
 
-    List<Producto>findFirst10ByNombre(String nombre);
+//    List<Producto>findFirst10ByNombre(String nombre);
 
 }

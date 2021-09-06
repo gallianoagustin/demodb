@@ -16,27 +16,34 @@ public class IProductoServiceImpl implements IProductoService {
     private ProductoRepository productoRepository;
 
     @Override
+    public int countBuscadoraByFilter(String filtrovalor, String filtroField) {
+        return 0;
+    }
+
+    @Override
+    public int countBuscadora() {
+        return this.productoRepository.countBuscadora();
+    }
+
+    @Override
     public int countBuscadora(String filtroValor, String filtroField) {
         return 0;
     }
 
     @Override
     public List<IProductoBuscadora> findBuscadora(Pageable pageable) {
-        return null;
+        return this.productoRepository.findBuscadora(pageable);
     }
 
-    @Override
-    public List<IProductoBuscadora> findBuscadoraBySku(Pageable pageable, String filtroValor, String filtroField) {
-        return null;
-    }
+
 
     @Override
     public List<Producto> findAll() {
         return productoRepository.findAll();
     }
 
-    @Override
-    public List<Producto> findFirst10ByNombre(String nombre) {
-        return productoRepository.findFirst10ByNombre(nombre);
-    }
+//    @Override
+//    public List<Producto> findFirst10ByNombre(String nombre) {
+//        return productoRepository.findFirst10ByNombre(nombre);
+//    }
 }
